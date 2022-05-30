@@ -1,18 +1,22 @@
-
+$(window).on("load", function () {
+    let dt=new Date(Date.now());
+    //let time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+    $('#tLable').text('Guest@acc > '+ dt);
+});
 
 function run(){
     let lableName=$('#tLable').text();
     let textBoxInput=$('#tInput').val();
-
     let tOutput=selectOptions(textBoxInput);
-
     //document.body.insertAdjacentHTML('beforeend','${textBoxInput}<br>')
-    $('#tText').append(lableName,textBoxInput.concat('<br>',tOutput,'<br>'));
+    if(textBoxInput!=='clear'){
+        $('#tText').append(lableName.concat('<br>','>>'),textBoxInput.concat('<br>',tOutput,'<br>'));
+    }
     
 }
 
 function selectOptions(number){
-    let text;
+    let text="";
     switch(number){
         case '1':
             text='option 1 selected';
@@ -39,6 +43,9 @@ function selectOptions(number){
             Ut ut facilisis nisi. Suspendisse sed massa sit amet sapien accumsan interdum vitae eget ex. Quisque ac justo quis velit mattis sodales.\
             Vestibulum fermentum dolor ac rutrum sagittis. Fusce quis sapien sapien.';
             break;
+        case 'clear':
+            $('#tText').empty();
+            break;
         default:
             text='Input is incorrect!Try again';
     }
@@ -48,10 +55,14 @@ function selectOptions(number){
 
 //Enter key
 $(document).on('keypress',function(e) {
-    $('#tInput').width($('#tInput').val().length*10);//text box width set
+    $('#tInput').attr('size',($('#tInput').val().length));//text box width set
     if(e.which == 13) {
         run();
         $('#tInput').val("");//text box value reset
-        $('#tInput').width();//text box width reset
+
+        //timer
+        let dt=new Date(Date.now());
+        //let time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+        $('#tLable').text('Guest@acc > '+ dt);
     }
 });
