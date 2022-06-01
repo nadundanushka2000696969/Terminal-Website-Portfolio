@@ -10,7 +10,9 @@ function run(){
     let tOutput=selectOptions(textBoxInput);
     //document.body.insertAdjacentHTML('beforeend','${textBoxInput}<br>')
     if(textBoxInput!=='clear'){
-        $('#tText').append(lableName.concat('<br>','>>'),textBoxInput.concat('<br>',tOutput,'<br>'));
+        $('#tText').append(lableName.concat('<br>',
+        '>> <span class="prcmd">',textBoxInput,'</span><br>'
+        ,tOutput,'<br>'));
     }
     
 }
@@ -55,7 +57,7 @@ function selectOptions(number){
 
 //Enter key
 $(document).on('keypress',function(e) {
-    $('#tInput').attr('size',($('#tInput').val().length));//text box width set
+    $('#tInput').attr('size',($('#tInput').val().length*2));//text box width set
     if(e.which == 13) {
         run();
         $('#tInput').val("");//text box value reset

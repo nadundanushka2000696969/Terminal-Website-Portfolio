@@ -2,17 +2,23 @@
 <head>
         <meta charset="utf-8">
         <title>Welcome to my portfolio</title>
+        <link rel="stylesheet" href="terminalCSS.css">
+        <!--gfonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&display=swap" rel="stylesheet">
         <!--jquery-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="terminal.js">
         </script>
     </head>
     <body>
-        <h1>hello</h1>
+        <h1 class="barcode">hello</h1>
         <p id="tBody">
             <div id="tText"></div>
-            <label id="tLable">type here > </label>
-            <input type="text" id='tInput' name="tInput" >
+            <label id="tLable" class="cmd"> </label><br>
+            <input type="text" id='tInput' name="tInput" class="inputFilde" size="30">
             <!--<button onclick="run()">click</button>-->
         </p>
     </body>
