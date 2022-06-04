@@ -39,3 +39,12 @@ body{
     font-family: 'Libre Barcode 39 Extended Text', cursive;
 }
 
+.center{
+    text-align: center;
+}
+
+.ascii-art{
+    font-family: monospace;
+    white-space: pre;
+}
+

@@ -10,9 +10,9 @@ function run(){
     let tOutput=selectOptions(textBoxInput);
     //document.body.insertAdjacentHTML('beforeend','${textBoxInput}<br>')
     if(textBoxInput!=='clear'){
-        $('#tText').append(lableName.concat('<br>',
-        '>> <span class="prcmd">',textBoxInput,'</span><br>'
-        ,tOutput,'<br>'));
+        $('#tText').append(lableName.concat(
+            '<br>','>> <span class="prcmd">',textBoxInput,'</span><br>'
+            ,tOutput,'<br>'));
     }
     
 }
@@ -20,33 +20,68 @@ function run(){
 function selectOptions(number){
     let text="";
     switch(number){
-        case '1':
-            text='option 1 selected';
+        case 'help':
+            text=help();
             break;
-        case '2':
-            text='option 2 selected';
+        case 'social':
+            text='\
+            LinkedIn : <a href="www.linkedin.com/in/nadun-danushka-kooragamage-a33122207">www.linkedin.com/in/nadun-danushka-kooragamage-a33122207</a><br>\
+            GitHub : <a href="https://github.com/nadundanushka2000696969">https://github.com/nadundanushka2000696969</a><br>\
+            Instagram : <a href="https://www.instagram.com/ndonkykong/">https://www.instagram.com/ndonkykong/</a><br>\
+            ';
             break;
-        case '3':
-            text='option 3 selected';
+        case 'whois':
+            text='I’m a Computer science student at IIT (Informatics Institute of\
+            Technology) seeking for internship for 12 months.\
+            Computer Science Intern dedicated to improving skills through hands-on learning and development work.\
+            Proficient in mobile and desktop development environments. Adept at using HTML5, Python, Java, JavaScript and other programming \
+            languages to produce clean code. Well-organized and collaborative team player with communication \
+            and analytical abilities.';
             break;
-        case '4':
-            text='Lorem ipsum dolor sit amet,\
-            consectetur adipiscing elit. Nunc at mauris nulla.\
-            Sed sit amet enim blandit mauris facilisis dignissim.\
-            Pellentesque nec congue sapien. Phasellus eget pretium augue.\
-            Vestibulum sed metus dignissim,\
-            tincidunt mauris ac, hendrerit mi.\
-            Phasellus efficitur nec risus sit amet sollicitudin.\
-            Nam convallis lorem et venenatis consequat.Donec nec viverra mi.\
-            Praesent nec lobortis enim. Aliquam in tellus mollis, tempor metus non, cursus ex. \
-            Ut nec ligula quis dui mollis ornare. Phasellus sit amet mauris porta nibh facilisis vestibulum mollis nec erat.\
-            Nulla facilisi. Fusce dapibus blandit arcu id finibus. In posuere nunc nec nisl aliquet, at tincidunt tortor egestas. \
-            In semper risus eget orci sollicitudin, ac mollis massa ultrices. Sed pharetra dolor lorem, sed dictum enim eleifend viverra.\
-            Ut ut facilisis nisi. Suspendisse sed massa sit amet sapien accumsan interdum vitae eget ex. Quisque ac justo quis velit mattis sodales.\
-            Vestibulum fermentum dolor ac rutrum sagittis. Fusce quis sapien sapien.';
+        case 'projects':
+            text='<span>\
+            2022 - <b>Parkour Parkour | Game Engine Architecture</b><br>\
+            A simple 3d platformer for the coursework. This project helped me understand how the game \
+            engine works and its technology.<br>\
+            <a href="https://youtu.be/N3-qi_nxl-U">Parkour Parkour</a><br><br>\
+            \
+            2021 - <b>DES KOMOREBI | Tourism web application</b><br>\
+            <i>(Worked on OCR , Rest API & AWS)</i><br>\
+            Worked on an OCR system to train and improve the accuracy of Sinhala characters not recognized \
+            by tesseract and to link front-end and back-end using the Rest API for the software development \
+            team project.<br>\
+            <a href="https://goceylon.herokuapp.com">Goceylon</a><br><br>\
+            \
+            2021 - <b>Rocket game</b><br>\
+            Created a simple rocket game that carries different weights of boulders within 3 days, without prior \
+            knowledge of unity game engine for math and physics for game development coursework.<br>\
+            2021 - <b>Championship management system</b><br>\
+            Basic Championship management system using OOP concept for the Object-Oriented\
+            programming coursework.<br><br>\
+            \
+            2021 - <b>AVAN | Demo Web Site – Front end development</b><br>\
+            <i>(Worked on movie selection and buy system)</i><br>\
+            Basic front end development web site for Web development coursework using HTML, CSS and Js.<br><br>\
+            \
+            2017 - <b>Supermarket management system</b><br>\
+            <i>(Team leader | Worked on UI, Database, Programming)</i><br>\
+            Successfully created a supermarket stock and employee management system using C# and MS \
+            Access for the Esoft C# project.\
+            \
+        </span>';
             break;
         case 'clear':
             $('#tText').empty();
+            break;
+
+        case 'banner':
+            text='<div class=\'ascii-art\'>\
+            ,          _   _       <br>\
+            /|   |     | | | |      <br>\
+             |___|  _  | | | |  __  <br>\
+             |   |\\|/  |/  |/  /  \\_<br>\
+             |   |/|__/|__/|__/\\__/ <br>\
+             </div>';
             break;
         default:
             text='Input is incorrect!Try again';
@@ -68,3 +103,21 @@ $(document).on('keypress',function(e) {
         $('#tLable').text('Guest@acc > '+ dt);
     }
 });
+
+$(document).on('click',function(){
+    $('#tInput').focus();
+})
+
+function help(){
+    //<tr><td></td><td></td></tr>\
+    let text='\
+    <table>\
+    <tr><td>whois</td><td>About the creator of this website.</td></tr>\
+    <tr><td>social</td><td>Social Media accounts.</td></tr>\
+    <tr><td>projects</td><td>Projects done by creator of this site.</td></tr>\
+    <tr><td>banner</td><td>Display the header</td></tr>\
+    <tr><td>clear</td><td>Clear the terminal.</td></tr>\
+    </table>\
+    ';
+    return text;
+}
