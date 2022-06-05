@@ -2,6 +2,7 @@ $(window).on("load", function () {
     let dt=new Date(Date.now());
     //let time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
     $('#tLable').text('Guest@acc > '+ dt);
+    $('#tText').append(selectOptions('banner')+"Type <span class=\"prcmd\">\"help\"</span> to get command...<br>");
 });
 
 function run(){
@@ -17,9 +18,9 @@ function run(){
     
 }
 
-function selectOptions(number){
+function selectOptions(input){
     let text="";
-    switch(number){
+    switch(input){
         case 'help':
             text=help();
             break;
@@ -33,8 +34,8 @@ function selectOptions(number){
         case 'whois':
             text='I’m a Computer science student at IIT (Informatics Institute of\
             Technology) seeking for internship for 12 months.\
-            Computer Science Intern dedicated to improving skills through hands-on learning and development work.\
-            Proficient in mobile and desktop development environments. Adept at using HTML5, Python, Java, JavaScript and other programming \
+            An inspiring programmer who enjoys experimenting with new technologies dedicated to improving skills through practical learning and development.\
+            Adept at using HTML5, Python, Java, JavaScript and other programming \
             languages to produce clean code. Well-organized and collaborative team player with communication \
             and analytical abilities.';
             break;
@@ -76,15 +77,18 @@ function selectOptions(number){
 
         case 'banner':
             text='<div class=\'ascii-art\'>\
-            ,          _   _       <br>\
-            /|   |     | | | |      <br>\
-             |___|  _  | | | |  __  <br>\
-             |   |\\|/  |/  |/  /  \\_<br>\
-             |   |/|__/|__/|__/\\__/ <br>\
+┌┬─┬┐░░░░░░░░░░░░░┌┐░░░░░░░░░┌─┐░░░┌┐┌─┐░░░┌┐░░<br>\
+││││├─┬┐┌─┬─┬──┬─┐│└┬─┐┌──┬┬┐│┼├─┬┬┤└┤─┼─┬┐├┼─┐<br>\
+│││││┴┤└┤─┤┼││││┴┤│┌┤┼││││││││┌┤┼│┌┤┌┤┌┤┼│└┤│┼│<br>\
+└─┴─┴─┴─┴─┴─┴┴┴┴─┘└─┴─┘└┴┴┼┐│└┘└─┴┘└─┴┘└─┴─┴┴─┘<br>\
+░░░░░░░░░░░░░░░░░░░░░░░░░░└─┘░░░░░░░░░░░░░░░░░░<br>\
              </div>';
             break;
+        case 'email':
+            text="<a href=\"mailto:nadun.danushka.kooragamage@gmail.com\">nadun.danushka.kooragamage@gmail.com</a>";
+            break;
         default:
-            text='Input is incorrect!Try again';
+            text='Command not found : <span class="prcmd">'+input+'</span>';
     }
     return text;
 }
@@ -112,11 +116,12 @@ function help(){
     //<tr><td></td><td></td></tr>\
     let text='\
     <table>\
-    <tr><td>whois</td><td>About the creator of this website.</td></tr>\
-    <tr><td>social</td><td>Social Media accounts.</td></tr>\
-    <tr><td>projects</td><td>Projects done by creator of this site.</td></tr>\
-    <tr><td>banner</td><td>Display the header</td></tr>\
-    <tr><td>clear</td><td>Clear the terminal.</td></tr>\
+    <tr><td class="cmd">whois</td><td>About the creator of this website.</td></tr>\
+    <tr><td class="cmd">social</td><td>Social Media accounts.</td></tr>\
+    <tr><td class="cmd">projects</td><td>Projects done by creator of this site.</td></tr>\
+    <tr><td class="cmd">banner</td><td>Display the header</td></tr>\
+    <tr><td class="cmd">clear</td><td>Clear the terminal.</td></tr>\
+    <tr><td class="cmd">email</td><td>Display the email </td></tr>\
     </table>\
     ';
     return text;
