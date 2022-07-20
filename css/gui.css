@@ -1,0 +1,40 @@
+body{
+    background-color: rgb(0, 44, 44);
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    color: rgb(63, 185, 169);
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    caret-color: rgb(63, 185, 169);
+}
+
+.card{
+    width: 15%;
+    height: 10%;
+    margin: 10px;
+    padding: 5px;
+    border: 2px;
+    border-style: solid;
+    border-color: rgb(1, 99, 99);
+    transition: width 0.5s,
+                height 0.5s,
+                font-size 0.5s,
+                transform 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+.card:hover{
+    width: 30%;
+    height: 15%;
+    font-size: 20px;
+    transform:rotateY(360deg);
+    border-color: rgb(135, 255, 255);
+}
+
+.pos{
+    padding: 20%;
+    padding-top: 50%;
+}
+
