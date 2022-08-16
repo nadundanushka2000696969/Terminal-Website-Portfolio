@@ -86,6 +86,9 @@ function selectOptions(input){
         case 'email':
             text="<a href=\"mailto:nadun.danushka.kooragamage@gmail.com\">nadun.danushka.kooragamage@gmail.com</a>";
             break;
+        case 'gui':
+            window.location = "gui.html";
+            break;
         default:
             text='Command not found : <span class="prcmd">'+input+'</span>';
     }
@@ -121,6 +124,7 @@ function help(){
     <tr><td class="cmd">social</td><td>Social Media accounts.</td></tr>\
     <tr><td class="cmd">projects</td><td>Projects done by creator of this site.</td></tr>\
     <tr><td class="cmd">banner</td><td>Display the header</td></tr>\
+    <tr><td class="cmd">gui</td><td>Launch the gui</td></tr>\
     <tr><td class="cmd">clear</td><td>Clear the terminal.</td></tr>\
     <tr><td class="cmd">email</td><td>Display the email </td></tr>\
     </table>';
