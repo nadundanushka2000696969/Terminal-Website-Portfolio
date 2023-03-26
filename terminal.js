@@ -33,9 +33,9 @@ function selectOptions(input){
             break;
         case 'whois':
             text='I’m a Computer science student at IIT (Informatics Institute of\
-            Technology) seeking for internship for 12 months.\
+            Technology) SE intern at SimCentric Technologies Sri Lanka for 12 months.\
             An inspiring programmer who enjoys experimenting with new technologies dedicated to improving skills through practical learning and development.\
-            Adept at using HTML5, Python, Java, JavaScript and other programming \
+            Adept at using HTML5, Python, Java, JavaScript, C++, Game Engins such as UE4/5, Unity and other programming \
             languages to produce clean code. Well-organized and collaborative team player with communication \
             and analytical abilities.';
             break;

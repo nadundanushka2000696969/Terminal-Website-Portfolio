@@ -26,6 +26,7 @@ body{
 
 .accordion-title {
   position: relative;
+  font-weight: bold;
 }
 
 .accordion-title:not(:nth-last-child(2))::after {
